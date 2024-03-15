@@ -2,6 +2,10 @@ const searchField = document.querySelector('#searchField')
 
 const sandsTableContent = document.querySelector('.sandsTable > .sandsTableContent')
 
+const popupModal = document.querySelector('.popupModal')
+
+const btnClose = document.querySelector('.btnClose')
+
 const sands = [
 	{
 		nr: 1,
@@ -21,7 +25,7 @@ const sands = [
 	},
 	{
 		nr: 5,
-		name: 'Kamen',
+		name: 'K.A Men',
 	},
 	{
 		nr: 6,
@@ -57,7 +61,7 @@ const sands = [
 	},
 	{
 		nr: 14,
-		name: 'vittard *',
+		name: 'Guittard',
 	},
 	{
 		nr: 15,
@@ -69,7 +73,7 @@ const sands = [
 	},
 	{
 		nr: 17,
-		name: 'Emilii salon mody ślubnej',
+		name: 'Emilii F salon mody ślubnej',
 	},
 	{
 		nr: 18,
@@ -81,7 +85,7 @@ const sands = [
 	},
 	{
 		nr: 20,
-		name: 'Lavika lub Lavivia *',
+		name: 'Lavika lub Lanka *',
 	},
 	{
 		nr: 21,
@@ -101,7 +105,7 @@ const sands = [
 	},
 	{
 		nr: 25,
-		name: 'Kate Ketex lub Keter *',
+		name: 'Kate Keter',
 	},
 	{
 		nr: 26,
@@ -133,11 +137,11 @@ const sands = [
 	},
 	{
 		nr: 33,
-		name: 'W.I.P',
+		name: 'Moda Męska W.I.P',
 	},
 	{
 		nr: 34,
-		name: 'Monao *',
+		name: 'Monao',
 	},
 	{
 		nr: 35,
@@ -145,11 +149,11 @@ const sands = [
 	},
 	{
 		nr: 36,
-		name: 'Larmen',
+		name: 'Larmen Ślubne Marzenie',
 	},
 	{
 		nr: 37,
-		name: 'Larmen 2',
+		name: 'Larmen Ślubne Marzenie 2',
 	},
 	{
 		nr: 38,
@@ -193,7 +197,7 @@ const sands = [
 	},
 	{
 		nr: 48,
-		name: '',
+		name: 'Krawiec z dojazdem nowe',
 	},
 	{
 		nr: 49,
@@ -201,7 +205,7 @@ const sands = [
 	},
 	{
 		nr: 50,
-		name: 'Komis + size',
+		name: 'Komis ślubny + size',
 	},
 	{
 		nr: 51,
@@ -217,7 +221,7 @@ const sands = [
 	},
 	{
 		nr: 54,
-		name: 'KANU',
+		name: 'KANU Studio Krawieckie',
 	},
 	{
 		nr: 55,
@@ -225,7 +229,7 @@ const sands = [
 	},
 	{
 		nr: 56,
-		name: 'Maison',
+		name: 'Maison Anoufa Paris',
 	},
 	{
 		nr: 57,
@@ -233,11 +237,11 @@ const sands = [
 	},
 	{
 		nr: 58,
-		name: 'Maribec  lub Mavibec lub Muribec lub Mavibel *',
+		name: 'Maribel',
 	},
 	{
 		nr: 59,
-		name: 'Reyujavik *',
+		name: 'Reykjavik',
 	},
 	{
 		nr: 60,
@@ -257,19 +261,19 @@ const sands = [
 	},
 	{
 		nr: 63,
-		name: 'Crux lub Cruxs *',
+		name: 'Crux',
 	},
 	{
 		nr: 64,
-		name: 'Sebastian Źukowski',
+		name: 'Sebastian Żukowski',
 	},
 	{
 		nr: 65,
-		name: 'Sebastian Źukowski',
+		name: 'Sebastian Żukowski',
 	},
 	{
 		nr: 66,
-		name: 'Zień *',
+		name: 'Maciej Zień',
 	},
 	{
 		nr: 67,
@@ -277,23 +281,23 @@ const sands = [
 	},
 	{
 		nr: 68,
-		name: 'Bespoke Tailor *',
+		name: 'Bespoke Tailor',
 	},
 	{
 		nr: 69,
-		name: 'Tatfan Greyson',
+		name: 'Tattan Gregson',
 	},
 	{
 		nr: 70,
-		name: 'Konieczny *',
+		name: 'Konieczny (torby)',
 	},
 	{
 		nr: 71,
-		name: 'Marien lub Mavien *',
+		name: 'Marien',
 	},
 	{
 		nr: 72,
-		name: 'Muchtos *',
+		name: 'Muskatos *',
 	},
 	{
 		nr: 73,
@@ -301,19 +305,21 @@ const sands = [
 	},
 	{
 		nr: 74,
-		name: 'Atelier Pologne *',
+		name: 'Atelier Pologne',
 	},
 	{
 		nr: 75,
-		name: 'Marta Selevom *',
+		name: 'Marta Sulekova lub Sulevom *',
 	},
 	{
 		nr: 76,
 		name: 'Biały sklep',
+		imgName: 'białySklep.jpg',
 	},
 	{
 		nr: 77,
 		name: 'Dąbrowski & Góral',
+		imgName: 'dąbrowski&góral.jpg',
 	},
 	{
 		nr: 78,
@@ -357,7 +363,7 @@ const sands = [
 	},
 	{
 		nr: 88,
-		name: 'Monica Mancini *',
+		name: 'Monica Moncini lub Mancini *',
 	},
 	{
 		nr: 89,
@@ -365,7 +371,7 @@ const sands = [
 	},
 	{
 		nr: 90,
-		name: 'Masira *',
+		name: 'Masina',
 	},
 	{
 		nr: 91,
@@ -374,6 +380,7 @@ const sands = [
 	{
 		nr: 92,
 		name: 'Armando',
+		imgName: 'armando.jpg',
 	},
 	{
 		nr: 93,
@@ -381,7 +388,7 @@ const sands = [
 	},
 	{
 		nr: 94,
-		name: 'Vogue lub Voque *',
+		name: 'Vogue',
 	},
 	{
 		nr: 95,
@@ -393,7 +400,7 @@ const sands = [
 	},
 	{
 		nr: 97,
-		name: 'Chór Kul *',
+		name: 'Chór Kul',
 	},
 	{
 		nr: 98,
@@ -401,7 +408,7 @@ const sands = [
 	},
 	{
 		nr: 99,
-		name: 'Best care *',
+		name: 'Best care',
 	},
 	{
 		nr: 100,
@@ -409,7 +416,7 @@ const sands = [
 	},
 	{
 		nr: 101,
-		name: 'Fellnol *',
+		name: 'Fellhof *',
 	},
 	{
 		nr: 102,
@@ -425,7 +432,7 @@ const sands = [
 	},
 	{
 		nr: 105,
-		name: 'Marzena *',
+		name: 'Marzena',
 	},
 	{
 		nr: 106,
@@ -449,7 +456,7 @@ const sands = [
 	},
 	{
 		nr: 111,
-		name: 'Mivi Kadrou *',
+		name: 'Mik Kadrou lub Kadrov *',
 	},
 	{
 		nr: 112,
@@ -457,7 +464,7 @@ const sands = [
 	},
 	{
 		nr: 113,
-		name: 'Anna Purna lub Anna Durna *',
+		name: 'Anna Purna',
 	},
 	{
 		nr: 114,
@@ -513,7 +520,7 @@ const sands = [
 	},
 	{
 		nr: 127,
-		name: 'Spoiwo *',
+		name: 'Spoiwo lub Spowo *',
 	},
 	{
 		nr: 128,
@@ -541,13 +548,726 @@ const sands = [
 	},
 	{
 		nr: 134,
-		name: 'My atelier ego',
+		name: 'My atelier/alter ego',
 	},
 	{
 		nr: 135,
-		name: 'Muizenie lub Marzenie',
+		name: 'Marzenie',
+	},
+	{
+		nr: 136,
+		name: 'Jgak lub Jgar *',
+	},
+	{
+		nr: 137,
+		name: 'De la Garza',
+	},
+	{
+		nr: 138,
+		name: 'Justin Paukin',
+	},
+	{
+		nr: 139,
+		name: 'Ts tom Sebastian lub Sebastien *',
+	},
+	{
+		nr: 140,
+		name: 'The wedding butik',
+	},
+	{
+		nr: 141,
+		name: 'Joanna',
+	},
+	{
+		nr: 142,
+		name: 'Paulina Mora',
+	},
+	{
+		nr: 143,
+		name: 'Plon',
+	},
+	{
+		nr: 144,
+		name: 'Bellavoi',
+	},
+	{
+		nr: 145,
+		name: 'Mc Premium',
+	},
+	{
+		nr: 146,
+		name: 'MMC',
+	},
+	{
+		nr: 147,
+		name: 'Moda Męska',
+	},
+	{
+		nr: 148,
+		name: 'Marees de france',
+	},
+	{
+		nr: 149,
+		name: 'Taranko 2',
+	},
+	{
+		nr: 150,
+		name: 'DP Club Conesera',
+	},
+	{
+		nr: 151,
+		name: 'Gentelman lub Gentleman *',
+	},
+	{
+		nr: 152,
+		name: 'Vizard',
+		imgName: 'vizard.jpg',
+	},
+	{
+		nr: 153,
+		name: 'Incanto Bridal',
+	},
+	{
+		nr: 154,
+		name: 'Ellstone',
+	},
+	{
+		nr: 155,
+		name: 'Justin Paukin',
+	},
+	{
+		nr: 156,
+		name: 'Elegant',
+	},
+	{
+		nr: 157,
+		name: 'Ellstone',
+	},
+	{
+		nr: 158,
+		name: 'Odevy Vodenka',
+	},
+	{
+		nr: 159,
+		name: 'Vodenkova',
+	},
+	{
+		nr: 160,
+		name: 'LAMANIA',
+	},
+	{
+		nr: 161,
+		name: 'EUFEME',
+	},
+	{
+		nr: 162,
+		name: 'On i Ona',
+	},
+	{
+		nr: 163,
+		name: 'Celebrity Bridal',
+	},
+	{
+		nr: 164,
+		name: 'Atelier rosa',
+	},
+	{
+		nr: 165,
+		name: 'MKL Suknie',
+	},
+	{
+		nr: 166,
+		name: 'Leśniowolski',
+	},
+	{
+		nr: 167,
+		name: 'Aleksandra',
+	},
+	{
+		nr: 168,
+		name: 'Galant',
+	},
+	{
+		nr: 169,
+		name: 'Amica',
+	},
+	{
+		nr: 170,
+		name: 'Novague',
+	},
+	{
+		nr: 171,
+		name: 'Off White (Laura)',
+	},
+	{
+		nr: 172,
+		name: 'New Men',
+	},
+	{
+		nr: 173,
+		name: 'Magdalena',
+	},
+	{
+		nr: 174,
+		name: 'Un',
+	},
+	{
+		nr: 175,
+		name: 'Pralnia Delfin',
+	},
+	{
+		nr: 176,
+		name: 'Branchess',
+	},
+	{
+		nr: 177,
+		name: 'Ferrano',
+	},
+	{
+		nr: 178,
+		name: 'U Zośki',
+	},
+	{
+		nr: 179,
+		name: 'Moda Prostejon',
+	},
+	{
+		nr: 180,
+		name: 'Atelier Rosa',
+	},
+	{
+		nr: 181,
+		name: 'Sklep Szyszka lub Szyszua *',
+	},
+	{
+		nr: 182,
+		name: 'INCANTO Bridal',
+	},
+	{
+		nr: 183,
+		name: 'Marcus Kerr',
+		additionalInfo: 'Małe czarne 100x60 bez wycietej szyjki',
+		imgName: 'marcusKerr.jpg',
+	},
+	{
+		nr: 184,
+		name: 'Juda Pietkiewicz',
+	},
+	{
+		nr: 185,
+		name: 'Mon Amour',
+	},
+	{
+		nr: 186,
+		name: 'Piast',
+	},
+	{
+		nr: 187,
+		name: 'Adriana Reina',
+	},
+	{
+		nr: 188,
+		name: 'Patrycja Knyt',
+	},
+	{
+		nr: 189,
+		name: 'Nikola B',
+	},
+	{
+		nr: 190,
+		name: 'Astra',
+	},
+	{
+		nr: 191,
+		name: 'Trendy Moda Ślubna',
+	},
+	{
+		nr: 192,
+		name: 'Tess',
+	},
+	{
+		nr: 193,
+		name: 'Lord moda męska',
+	},
+	{
+		nr: 194,
+		name: 'Kaledonia',
+	},
+	{
+		nr: 195,
+		name: 'Brant punkt lub Braut *',
+	},
+	{
+		nr: 196,
+		name: 'Warsaw Poet',
+	},
+	{
+		nr: 197,
+		name: 'Sposa',
+	},
+	{
+		nr: 198,
+		name: 'Gena (woreczki)',
+	},
+	{
+		nr: 199,
+		name: 'Mikołajkowe Spotkania Taneczne',
+	},
+	{
+		nr: 200,
+		name: 'Monica Nera',
+	},
+	{
+		nr: 201,
+		name: 'Lara Levai',
+	},
+	{
+		nr: 202,
+		name: 'Monika Sałapat',
+	},
+	{
+		nr: 203,
+		name: 'Mademoiselle',
+	},
+	{
+		nr: 204,
+		name: 'An-pol',
+	},
+	{
+		nr: 205,
+		name: 'Tańcz z Hand',
+	},
+	{
+		nr: 206,
+		name: 'Filharmonia',
+	},
+	{
+		nr: 207,
+		name: 'Evita (korona)',
+	},
+	{
+		nr: 208,
+		name: 'Releve Dance Wear',
+	},
+	{
+		nr: 209,
+		name: 'Eliza',
+	},
+	{
+		nr: 210,
+		name: 'Fusset',
+	},
+	{
+		nr: 211,
+		name: 'Manhattan',
+	},
+	{
+		nr: 212,
+		name: 'Modowa Krawcowa *',
+	},
+	{
+		nr: 213,
+		name: 'Queens Factory',
+	},
+	{
+		nr: 214,
+		name: 'Sklep Oliwier & Oliwia',
+	},
+	{
+		nr: 215,
+		name: 'Guns & tuxedos',
+	},
+	{
+		nr: 216,
+		name: 'Klasyka',
+	},
+	{
+		nr: 217,
+		name: 'Pantera',
+	},
+	{
+		nr: 218,
+		name: 'Winter',
+	},
+	{
+		nr: 219,
+		name: 'Epuzer',
+	},
+	{
+		nr: 220,
+		name: 'Epuzer',
+	},
+	{
+		nr: 221,
+		name: 'Janet Marie',
+	},
+	{
+		nr: 222,
+		name: 'White Angel',
+	},
+	{
+		nr: 223,
+		name: 'Concept store by Evita',
+	},
+	{
+		nr: 224,
+		name: 'Kamil Hala',
+	},
+	{
+		nr: 225,
+		name: 'Releve Dance',
+	},
+	{
+		nr: 226,
+		name: 'Morfeusz',
+	},
+	{
+		nr: 227,
+		name: 'Pitti Style',
+	},
+	{
+		nr: 228,
+		name: 'Vestito',
+	},
+	{
+		nr: 229,
+		name: 'Marochianto 1989',
+	},
+	{
+		nr: 230,
+		name: 'Zespół Polskie Kwiaty',
+	},
+	{
+		nr: 231,
+		name: 'Josh',
+	},
+	{
+		nr: 232,
+		name: 'Reglment Etrancer',
+	},
+	{
+		nr: 233,
+		name: 'Verona',
+	},
+	{
+		nr: 234,
+		name: 'Malena',
+	},
+	{
+		nr: 235,
+		name: 'Fashion ltd Angel',
+	},
+	{
+		nr: 236,
+		name: 'Exclusive tailoring',
+	},
+	{
+		nr: 237,
+		name: 'Lux Anna',
+	},
+	{
+		nr: 238,
+		name: 'Larumi',
+	},
+	{
+		nr: 239,
+		name: 'Salon Gabriel',
+	},
+	{
+		nr: 240,
+		name: 'Diva',
+	},
+	{
+		nr: 241,
+		name: 'Bartmańska',
+	},
+	{
+		nr: 242,
+		name: 'Skampol',
+	},
+	{
+		nr: 243,
+		name: 'Elegant Kurtki',
+	},
+	{
+		nr: 244,
+		name: 'hochzart',
+	},
+	{
+		nr: 245,
+		name: 'Legion etrangere',
+	},
+	{
+		nr: 246,
+		name: 'Branta',
+	},
+	{
+		nr: 247,
+		name: 'Salon Gabriel',
+	},
+	{
+		nr: 248,
+		name: 'Mallone',
+	},
+	{
+		nr: 249,
+		name: 'Nicole',
+	},
+	{
+		nr: 250,
+		name: 'Stachowska',
+	},
+	{
+		nr: 251,
+		name: 'Stachowska',
+	},
+	{
+		nr: 252,
+		name: 'La Blanche',
+	},
+	{
+		nr: 253,
+		name: 'Dream',
+	},
+	{
+		nr: 254,
+		name: 'Strefa panny młodej',
+	},
+	{
+		nr: 255,
+		name: 'Nesto',
+	},
+	{
+		nr: 256,
+		name: 'Bellovelo',
+	},
+	{
+		nr: 257,
+		name: 'Melrose Bridal',
+	},
+	{
+		nr: 258,
+		name: 'Modema',
+	},
+	{
+		nr: 259,
+		name: 'La Blanka',
+	},
+
+	{
+		nr: 260,
+		name: 'Poca Poca Petite',
+	},
+
+	{
+		nr: 261,
+		name: 'Melia',
+	},
+	{
+		nr: 262,
+		name: 'Trojan Sport',
+	},
+	{
+		nr: 263,
+		name: 'Hanna Bieńskowska',
+	},
+	{
+		nr: 264,
+		name: 'Meble Piegza',
+	},
+	{
+		nr: 265,
+		name: 'Po Prostu',
+	},
+	{
+		nr: 266,
+		name: 'Stolarczyk Suits',
+	},
+	{
+		nr: 267,
+		name: 'Ciao Maxtara',
+	},
+	{
+		nr: 268,
+		name: 'Jola Przebinda',
+		imgName: 'jolaPrzebinda.jpg',
+		additionalInfo: 'małe czarne 110/64 !!! z wycieta szyjka',
+	},
+	{
+		nr: 269,
+		name: 'Mari Lill',
+	},
+	{
+		nr: 270,
+		name: 'Komunijne Sukienki',
+	},
+	{
+		nr: 271,
+		name: 'Mr Badura',
+	},
+	{
+		nr: 272,
+		name: 'La Blanca',
+	},
+	{
+		nr: 273,
+		name: 'Leger',
+	},
+	{
+		nr: 274,
+		name: 'Bastek',
+	},
+	{
+		nr: 275,
+		name: 'Wonder Affair',
+	},
+	{
+		nr: 276,
+		name: 'Ak Moda',
+	},
+	{
+		nr: 277,
+		name: 'Dom Krawca',
+	},
+	{
+		nr: 278,
+		name: 'Taranko 1',
+	},
+	{
+		nr: 279,
+		name: 'Elegant',
+	},
+	{
+		nr: 280,
+		name: 'Magnat',
+	},
+	{
+		nr: 281,
+		name: 'Hawrot',
+	},
+	{
+		nr: 282,
+		name: 'Vesti Clero',
+	},
+	{
+		nr: 283,
+		name: 'Wekend',
+	},
+	{
+		nr: 284,
+		name: 'Madonna',
+	},
+	{
+		nr: 285,
+		name: 'Devikap / Denoeix',
+	},
+	{
+		nr: 286,
+		name: 'Villaro',
+		additionalInfo: 'małe czarne 100x60 z wycieta szyjka',
+		imgName: 'villaro.jpg',
+	},
+	{
+		nr: 287,
+		name: 'Garnitex',
+	},
+	{
+		nr: 288,
+		name: 'Novia Studio',
+	},
+	{
+		nr: 289,
+		name: 'Kros',
+	},
+	{
+		nr: 290,
+		name: 'Garnitex',
+	},
+	{
+		nr: 291,
+		name: 'Korczak i Syn',
+	},
+	{
+		nr: 292,
+		name: 'Laura salon mody ślubnej',
+	},
+	{
+		nr: 293,
+		name: 'Ciao Maxtara',
+	},
+	{
+		nr: 294,
+		name: 'Moda pol',
+	},
+	{
+		nr: 295,
+		name: 'Pralnia Laguna',
+	},
+	{
+		nr: 296,
+		name: 'Blue Shadow',
+	},
+	{
+		nr: 297,
+		name: 'bastek',
+	},
+	{
+		nr: 298,
+		name: 'Andre grand',
+	},
+	{
+		nr: 299,
+		name: 'Mavi',
+	},
+	{
+		nr: 300,
+		name: 'Korczak i Syn',
+	},
+	{
+		nr: 301,
+		name: 'Fenomen',
+	},
+	{
+		nr: 302,
+		name: 'Massimo',
+	},
+	{
+		nr: 303,
+		name: 'Szyjemy Sukienki',
+	},
+	{
+		nr: 304,
+		name: 'Letoice du matin',
+	},
+	{
+		nr: 305,
+		name: 'BW',
 	},
 ]
+
+// vizarro bez wycietej szyjki 100x60
+//Elstone dodac zdjecie
+
+function openPopupImage(imagePath) {
+	if (imagePath) {
+		document.querySelector('.popupModalImage').src = imagePath
+		popupModal.classList.remove('hidden')
+	}
+}
+
+function closePopup() {
+	popupModal.classList.add('hidden')
+}
+
+btnClose.addEventListener('click', function () {
+	closePopup()
+})
+
+document.querySelector('.sandsTableContent').addEventListener('click', function (e) {
+	if (e.target.classList.contains('thumbnailImage')) {
+		openPopupImage(e.target.getAttribute('src'))
+	}
+})
 
 searchField.addEventListener('input', function (e) {
 	e.preventDefault()
@@ -561,13 +1281,14 @@ searchField.addEventListener('input', function (e) {
 		return elem.name.toUpperCase().includes(searchText.toUpperCase())
 	})
 
-	console.log(searchSands)
-
 	searchSands.forEach(function (el, i) {
 		const tr = `<tr>
             <td>${el.nr}</td>
             <td>${el.name}</td>
+            <td><img  class="thumbnailImage" src="${el.imgName ? 'img/' + el.imgName : ''}"/></td>
+            <td>${el.additionalInfo ? el.additionalInfo : ''}</td>
         </tr>`
+
 		sandsTableContent.insertAdjacentHTML('beforeend', tr)
 	})
 })
