@@ -319,7 +319,7 @@ const sands = [
 	{
 		nr: 77,
 		name: 'Dąbrowski & Góral',
-		imgName: 'dąbrowski&góral.jpg',
+		imgName: 'dabrowski&goral.jpg',
 	},
 	{
 		nr: 78,
